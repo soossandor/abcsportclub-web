@@ -5,14 +5,14 @@ import { getCollection } from 'astro:content';
 // 1. LÉPÉS: Lekérjük a cikkeket, és KISZŰRJÜK az adott kategóriát
 // (Fontos: Pontosan úgy kell írni a kategória nevét, ahogy a config.yml-ben szerepel!)
 const allPosts = await getCollection('hirek');
-const pagePosts = allPosts.filter(post => post.data.category === 'Golden Open');
+const pagePosts = allPosts.filter(post => post.data.category === 'Kapcsolat');
 ---
 
-<BaseLayout title="Golden Open">
+<BaseLayout title="Kapcsolat">
   
   <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
     <h1 style="font-size: 2.5rem; margin-bottom: 30px; color: #1a365d; border-bottom: 2px solid #ecc94b; padding-bottom: 10px;">
-      Golden Open
+      Kapcsolat
     </h1>
     
     <ul style="list-style: none; padding: 0;">

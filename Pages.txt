@@ -1,0 +1,31 @@
+coaching.astro — Mind & Motion Coaching (Kész)
+
+galeria.astro — Galéria ---
+
+golden-open.astro — Golden Open ---
+
+golden-serve.astro — Golden Serve Tour ---
+
+gyakori-kerdesek.astro — Gyakori kérdések ---
+
+hetvegi-sportiskola.astro — Hétvégi Sportiskola (Kész)
+
+jelentkezes.astro — Jelentkezés ---
+
+kapcsolat.astro — Kapcsolat +++
+
+mit-kap-ebbol.astro — Mit kap ebből a gyermek ---
+
+pickleball-mini-tenisz.astro — Pickleball és Mini Tenisz ---
+
+rolunk.astro — Bemutatkozás +++
+
+senior-tour.astro — Senior Tour ---
+
+silver-open.astro — Silver Open ---
+
+taborok.astro — Táborok (Kész)
+
+versenynaptar.astro — Versenynaptár ---
+
+wilson-junior.astro — Wilson Junior Tour ---
