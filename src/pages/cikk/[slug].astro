@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+// Itt is feltételezem, hogy a BaseLayout-od a layouts mappában van
+import BaseLayout from '../../layouts/BaseLayout.astro'; 
+
+export async function getStaticPaths() {
+  // Lekérjük a raktárból az összes cikket (a collection neve eddig 'hirek' volt)
+  const allPosts = await getCollection('hirek');
+  
+  // Generálunk egy-egy oldalt mindegyiknek
+  return allPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={post.data.title}>
+  <article class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">{post.data.title}</h1>
+    
+    <div class="prose">
+      <Content />
+    </div>
+    
+    <a href="javascript:history.back()" class="mt-8 inline-block text-blue-500 hover:underline">
+      &larr; Vissza
+    </a>
+  </article>
+</BaseLayout>

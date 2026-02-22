@@ -13,16 +13,14 @@ const taborokPosts = allPosts.filter(post => post.data.category === 'Táborok');
   <ul>
     {taborokPosts.map((post) => (
       <li>
-        <strong>{post.data.title}</strong>
+        <a href={`/cikk/${post.slug}`} class="text-blue-600 hover:underline font-bold">
+  {post.data.title}
+</a>
       </li>
     ))}
   </ul>
 </div>
   
-  <div class="oldal-tartalom">
-    <h1>Hamarosan...</h1>
-    <p>Ennek az oldalnak a tartalma jelenleg feltöltés alatt áll. Nézz vissza később!</p>
-  </div>
 </BaseLayout>
 
 <style>
