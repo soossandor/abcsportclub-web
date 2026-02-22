@@ -18,4 +18,4 @@ Tevékenységeink három pilléren nyugszanak:
 
 Emellett hazai és nemzetközi junior és senior pickleball- és teniszversenyek szervezőiként küldetésünk, hogy minden játékosnak minőségi élményt és fejlődési lehetőséget biztosítsunk.
 
-\*\*ABC Sportclub \*\*– ahol a mozgás élménnyé, a közösség erővé válik.
+**ABC Sportclub** – ahol a mozgás élménnyé, a közösség erővé válik.
