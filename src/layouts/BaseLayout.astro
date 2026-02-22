@@ -7,64 +7,76 @@ const siteName = "ABC Sportclub";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | {siteName}</title>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-IDE-JON-A-KODOD"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1BFR0C4NV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-IDE-JON-A-KODOD');
+      gtag('config', 'G-G1BFR0C4NV');
     </script>
   </head>
   <body>
     <header class="header">
-      <div class="logo">
-        <h1>{siteName}</h1>
+      
+      <div class="logo-container">
+        <a href="/">
+          <img src="/logo.png" alt="ABC Sportclub Logó" class="site-logo" />
+        </a>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="/">Kezdőlap</a></li>
-          
-          <li class="dropdown">
-            <a href="#">ABC Tenisz Iskola ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="/mit-kap-ebbol">Mit kap ebből a gyermek...</a></li>
-              <li><a href="/gyakori-kerdesek">Gyakori kérdések</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="/hetvegi-sportiskola">Hétvégi Sportiskola</a></li>
-          
-          <li class="dropdown">
-            <a href="#">Pickleball Versenyeink ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="/versenynaptar">Versenynaptár</a></li>
-              <li><a href="/senior-tour">Senior Tour (60+,65+)</a></li>
-              <li><a href="/silver-open">Silver Open Hungary</a></li>
-              <li><a href="/golden-serve">Golden Serve Tour 70+</a></li>
-              <li><a href="/golden-open">Golden Open Hungary 70+</a></li>
-              <li><a href="/wilson-junior">Wilson Junior Tour U14/U16</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="/coaching">Mind & Motion Coaching</a></li>
-          <li><a href="/jelentkezes">Jelentkezés</a></li>
-          
-          <li class="dropdown">
-            <a href="/rolunk">Rólunk ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="/rolunk">Bemutatkozás</a></li>
-              <li><a href="/pickleball-mini-tenisz">Pickleball és Mini Tenisz</a></li>
-              <li><a href="/galeria">Galéria</a></li>
-              <li><a href="/kapcsolat">Kapcsolat</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="/taborok">Táborok</a></li>
-        </ul>
-      </nav>
+      
+      <div class="nav-container">
+        <button class="hamburger" aria-label="Menü">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/">Kezdőlap</a></li>
+            
+            <li class="dropdown">
+              <a href="#">ABC Tenisz Iskola ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="/mit-kap-ebbol">Mit kap ebből a gyermek...</a></li>
+                <li><a href="/gyakori-kerdesek">Gyakori kérdések</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/hetvegi-sportiskola">Hétvégi Sportiskola</a></li>
+            
+            <li class="dropdown">
+              <a href="#">Pickleball Versenyeink ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="/versenynaptar">Versenynaptár</a></li>
+                <li><a href="/senior-tour">Senior Tour (60+,65+)</a></li>
+                <li><a href="/silver-open">Silver Open Hungary</a></li>
+                <li><a href="/golden-serve">Golden Serve Tour 70+</a></li>
+                <li><a href="/golden-open">Golden Open Hungary 70+</a></li>
+                <li><a href="/wilson-junior">Wilson Junior Tour U14/U16</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/coaching">Mind & Motion Coaching</a></li>
+            <li><a href="/jelentkezes">Jelentkezés</a></li>
+            
+            <li class="dropdown">
+              <a href="/rolunk">Rólunk ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="/rolunk">Bemutatkozás</a></li>
+                <li><a href="/pickleball-mini-tenisz">Pickleball és Mini Tenisz</a></li>
+                <li><a href="/galeria">Galéria</a></li>
+                <li><a href="/kapcsolat">Kapcsolat</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="/taborok">Táborok</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="container">
@@ -74,6 +86,18 @@ const siteName = "ABC Sportclub";
     <footer>
       <p>&copy; 2026 {siteName}. Minden jog fenntartva.</p>
     </footer>
+
+    <script>
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('.main-nav');
+
+      if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+      }
+    </script>
   </body>
 </html>
 
@@ -96,37 +120,57 @@ const siteName = "ABC Sportclub";
     min-height: 100vh;
   }
 
-  /* Fejléc újraformázva, hogy a sok menüpont kiférjen */
+  /* --- Osztott Fejléc (Split Header) Stílusok --- */
   .header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1rem 2rem;
     display: flex;
-    flex-direction: column; /* Egymás alá teszi a logót és a menüt */
-    gap: 1rem;
-    align-items: center;
+    background-color: var(--primary-color); /* A jobb oldal automatikusan kék lesz */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    align-items: stretch; /* Hogy mindkét fél egyforma magas legyen */
   }
 
-  .header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
-    color: var(--accent-color);
+  .logo-container {
+    background-color: white; /* Fehér bal oldal */
+    padding: 0.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Megakadályozza, hogy a menü összenyomja a logót */
   }
- 
+
+  .site-logo {
+    max-height: 70px; /* Szabadon méretezhető */
+    width: auto;
+    display: block;
+  }
+
+  .nav-container {
+    flex-grow: 1; /* Kitölti a maradék kék helyet */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Jobbra tolja a menüt */
+    padding: 0 2rem;
+  }
+
+  /* --- Menü és Tördelés --- */
+  .main-nav {
+    width: 100%;
+  }
+
   .main-nav > ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Ha nem fér ki, új sorba tördeli a menüt */
-    justify-content: center;
-    gap: 1.5rem;
+    flex-wrap: wrap; /* ! Ez engedi, hogy 2 sorba törjön a menü ! */
+    justify-content: flex-end; /* Jobbra igazítás */
+    gap: 0.5rem 1.5rem; /* Sorok és oszlopok közötti távolság */
   }
 
   .main-nav > ul > li {
-    position: relative; /* Ez kell a lenyíló menü pozicionálásához */
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
   .main-nav a {
@@ -143,13 +187,13 @@ const siteName = "ABC Sportclub";
     color: var(--accent-color);
   }
 
-  /* --- Lenyíló (Dropdown) menü stílusok --- */
+  /* --- Lenyíló (Dropdown) menü asztali nézeten --- */
   .dropdown-menu {
-    display: none; /* Alapból el van rejtve */
+    display: none;
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%); /* Középre igazítja a gomb alatt */
+    transform: translateX(-50%);
     background-color: #2d3748;
     min-width: 220px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -158,9 +202,9 @@ const siteName = "ABC Sportclub";
     gap: 0 !important;
     padding: 0.5rem 0 !important;
     border-radius: 4px;
+    margin-top: 5px;
   }
 
-  /* Ha az egeret a fő menüpont fölé viszed, megjelenik az almenü */
   .main-nav li.dropdown:hover .dropdown-menu {
     display: flex;
   }
@@ -180,12 +224,93 @@ const siteName = "ABC Sportclub";
     border-bottom: none;
   }
 
-  .dropdown-menu a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: var(--accent-color);
+  /* --- Hamburger Gomb (Asztalin rejtve) --- */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    z-index: 100;
   }
-  /* --------------------------------------- */
 
+  .hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+  }
+
+  /* --- RESZPONZÍV MOBIL NÉZET --- */
+  @media (max-width: 1050px) { /* Hamarabb kapcsol hamburgerre, hogy ne legyen túl zsúfolt */
+    .nav-container {
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-color);
+      padding: 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 99;
+    }
+
+    .main-nav.active {
+      display: block;
+    }
+
+    .main-nav > ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .main-nav > ul > li {
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .main-nav a {
+      padding: 1rem 2rem;
+    }
+
+    .dropdown-menu {
+      position: static;
+      transform: none;
+      background-color: rgba(0,0,0,0.15);
+      box-shadow: none;
+      padding: 0 !important;
+    }
+
+    .dropdown-menu a {
+      padding-left: 3rem;
+    }
+  }
+
+  /* Hamburger animáció (X-szé alakul) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* --- Alap oldal stílusok --- */
   .container {
     flex-grow: 1;
     padding: 2rem;
