@@ -3,6 +3,7 @@ title: Második tábori próbacikk
 category: Táborok
 date: 2026-02-21
 excerpt: Ez a második cikkem
+thumbnail: /uploads/Boldog születésnapot.jpg
 ---
 
 Ebben a cikkben már kipróbálok néhány formázási lehetőséget
