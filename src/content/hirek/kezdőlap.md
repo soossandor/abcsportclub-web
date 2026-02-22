@@ -6,7 +6,7 @@ excerpt: Üdvözlünk az ABC Sportclub oldalán!
 thumbnail: ''
 ---
 
-Üdvözlünk az ABC Sportclub oldalán!
+# Üdvözlünk az ABC Sportclub oldalán!
 
 Az **ABC Sportclub** egy sokoldalú sport- és közösségi műhely, ahol a mozgás, a fejlődés és az élmény találkozik.
 
@@ -18,4 +18,4 @@ Tevékenységeink három pilléren nyugszanak:
 
 Emellett hazai és nemzetközi junior és senior pickleball- és teniszversenyek szervezőiként küldetésünk, hogy minden játékosnak minőségi élményt és fejlődési lehetőséget biztosítsunk.
 
-**ABC Sportclub&#160;**– ahol a mozgás élménnyé, a közösség erővé válik.
+\*\*ABC Sportclub \*\*– ahol a mozgás élménnyé, a közösség erővé válik.
