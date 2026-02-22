@@ -19,8 +19,10 @@ const siteName = "ABC Sportclub";
     </script>
   </head>
   <body>
-    <header style="position: sticky; top: 0; z-index: 1000; background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  </header>
+
+    <div style="position: sticky; top: 0; z-index: 1000; background-color: #ffffff; width: 100%; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"></div>
+    
+    <header class="header">
       
       <div class="logo-container">
         <a href="/">
@@ -79,6 +81,7 @@ const siteName = "ABC Sportclub";
         </nav>
       </div>
     </header>
+</div>
 
     <main class="container">
       <slot /> 
