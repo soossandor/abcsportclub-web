@@ -15,7 +15,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Cím", name: "title", widget: "string"}
-      - {label: "Kategória", name: "category", widget: "string", default: "Hírek"}
+      - {label: "Kategória (Hova kerüljön?)", name: "category", widget: "select", options: ["Hírek", "ABC Tenisz Iskola", "Hétvégi Sportiskola", "Pickleball Versenyeink", "Coaching", "Táborok"] }
       - {label: "Dátum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "Rövid összefoglaló", name: "excerpt", widget: "text"}
-      - {label: "Tartalom", name: "body", widget: "markdown"}
+      - {label: "Cikk szövege", name: "body", widget: "markdown"}
