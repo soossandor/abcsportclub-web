@@ -8,6 +8,7 @@ const hirekCollection = defineCollection({
     date: z.date(),    // A dátum kötelező
     category: z.string(), // A kategória kötelező
     excerpt: z.string().optional(), // A rövid leírás (kivonat) opcionális
+    thumbnail: z.string().optional(),
   }),
 });
 
