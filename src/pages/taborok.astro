@@ -12,12 +12,12 @@ const taborokPosts = allPosts.filter(post => post.data.category === 'Táborok');
   <h3>Legfrissebb információk a táborokról:</h3>
   <ul>
     {taborokPosts.map((post) => (
-  <li class="flex items-center gap-4 mb-6">
+  <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
   {post.data.thumbnail && (
-    <img src={post.data.thumbnail} alt={post.data.title} class="w-24 h-24 object-cover rounded-lg shadow-sm flex-shrink-0" />
+    <img src={post.data.thumbnail} alt={post.data.title} style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px; flex-shrink: 0;" />
   )}
   
-  <a href={`/cikk/${post.slug}`} class="text-blue-600 hover:text-blue-800 hover:underline font-bold text-xl">
+  <a href={`/cikk/${post.slug}`} style="font-size: 1.25rem; font-weight: bold; color: #2563eb; text-decoration: none;">
     {post.data.title}
   </a>
 </li>

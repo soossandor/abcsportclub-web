@@ -23,7 +23,7 @@ const { Content } = await post.render();
     <h1 class="text-3xl font-bold mb-6">{post.data.title}</h1>
  
     {post.data.thumbnail && (
-      <img src={post.data.thumbnail} alt={post.data.title} class="w-80 h-auto object-cover rounded-lg mb-8 shadow-md" />
+      <img src={post.data.thumbnail} alt={post.data.title} style="max-width: 320px; width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;" />
     )}
     
     <div class="prose max-w-none">
