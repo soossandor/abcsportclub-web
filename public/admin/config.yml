@@ -2,8 +2,7 @@ backend:
   name: github
   repo: soossandor/abcsportclub-web # IDE ÍRD BE A SAJÁT GITHUB NEVED!
   branch: main
-  site_domain: abcsportclub.netlify.app # 
-
+  
 # Ide kerülnek majd a cikkekhez feltöltött képek
 media_folder: "public/uploads"
 public_folder: "/uploads"
