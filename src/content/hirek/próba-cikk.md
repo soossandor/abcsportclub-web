@@ -1,6 +1,6 @@
 ---
 title: Próba cikk
-category: Hirek
+category: Hírek
 date: 2026-02-22
 excerpt: Ez egy próbacikk az új rendszer kipróbálására
 ---
