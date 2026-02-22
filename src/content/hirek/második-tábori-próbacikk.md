@@ -1,6 +1,6 @@
 ---
 title: Második tábori próbacikk
-category: Táborok
+category: Piszkozat
 date: 2026-02-21
 excerpt: Ez a második cikkem
 thumbnail: /uploads/Boldog születésnapot.jpg
