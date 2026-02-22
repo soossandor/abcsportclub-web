@@ -1,24 +1,33 @@
 ---
-// Importáljuk a keretünket, amit az előbb hoztál létre!
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Lekérjük az összes cikket
+const allPosts = await getCollection('hirek');
+
+// 2. Kikeressük azt az egyetlent, aminek a kategóriája "Kezdőlap"
+const singlePost = allPosts.find(post => post.data.category === 'Kezdőlap');
+
+// 3. Ha megvan, előkészítjük a HTML tartalmát megjelenítésre
+const Content = singlePost ? (await singlePost.render()).Content : null;
 ---
 
-<BaseLayout title="Főoldal">
+<BaseLayout title="Kezdőlap">
   
-  <section class="hero">
-    <h2>Üdvözlünk az ABC Sportclub hivatalos oldalán!</h2>
-    <p>Csatlakozz hozzánk a 2026-os szezonban is! Legyél te is a csapatunk tagja, fejleszd a tudásod teniszben és pickleballban profi edzőink segítségével.</p>  
-  </section>
+  <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+    
+    {Content ? (
+      // Ha megírtad a CMS-ben, itt jelenik meg a teljes, formázott szöveg és a képek
+      <div style="font-size: 1.1rem; line-height: 1.6; color: #333;">
+        <Content />
+      </div>
+    ) : (
+      // Ha még üres a kategória, ezt az üzenetet mutatja
+      <p style="text-align: center; color: #666; font-style: italic; margin-top: 50px; font-size: 1.2rem;">
+        A Kezdőlap tartalma feltöltés alatt áll. Kérjük, látogass vissza később!
+      </p>
+    )}
+
+  </div>
 
 </BaseLayout>
-
-<style>
-  /* Már csak azokat a stílusokat kell ide írni, amik KIFEJEZETTEN ezen az oldalon vannak */
-  .hero {
-    text-align: center;
-    background-color: white;
-    padding: 4rem 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-</style>
