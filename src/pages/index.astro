@@ -1,0 +1,24 @@
+---
+// Importáljuk a keretünket, amit az előbb hoztál létre!
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Főoldal">
+  
+  <section class="hero">
+    <h2>Üdvözlünk az ABC Sportclub megújult weboldalán!</h2>
+    <p>Ez itt az új, villámgyors és biztonságos rendszered alapja. Észre sem veszed, de a háttérben már a modern komponens-alapú szerkezet dolgozik!</p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Már csak azokat a stílusokat kell ide írni, amik KIFEJEZETTEN ezen az oldalon vannak */
+  .hero {
+    text-align: center;
+    background-color: white;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+</style>

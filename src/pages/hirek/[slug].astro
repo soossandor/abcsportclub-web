@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Ez a függvény mondja meg az Astrónak, hogy a .md fájlokból 
+// milyen egyedi linkeket (slug) kell legenerálnia.
+export async function getStaticPaths() {
+  const hirek = await getCollection('hirek');
+  return hirek.map(hir => ({
+    params: { slug: hir.slug },
+    props: { hir },
+  }));
+}
+
+// Itt kérjük le az adott cikk tartalmát
+const { hir } = Astro.props;
+const { Content } = await hir.render();
+---
+
+<BaseLayout title={hir.data.title}>
+  <article class="egyedi-hir">
+    <header>
+      <span class="kategoria">{hir.data.category}</span>
+      <h1>{hir.data.title}</h1>
+      <p class="datum">{hir.data.date.toLocaleDateString('hu-HU')}</p>
+    </header>
+    
+    <div class="tartalom">
+      <Content />
+    </div>
+    
+    <div class="vissza">
+      <a href="/hirek">&larr; Vissza a hírekhez</a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .egyedi-hir {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  header {
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .kategoria {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .datum {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  .tartalom {
+    line-height: 1.6;
+    color: #4a5568;
+  }
+  /* Így formázzuk a cikk belsejében lévő HTML elemeket */
+  .tartalom :global(h2) {
+    color: var(--primary-color);
+    margin-top: 2rem;
+  }
+  .tartalom :global(ul) {
+    padding-left: 1.5rem;
+  }
+  .vissza {
+    margin-top: 3rem;
+  }
+  .vissza a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .vissza a:hover {
+    text-decoration: underline;
+  }
+</style>

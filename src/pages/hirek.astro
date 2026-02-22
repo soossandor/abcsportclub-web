@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Lekérjük az összes cikket a "hirek" mappából
+const allHirek = await getCollection('hirek');
+
+// Sorba rendezzük őket dátum szerint (legújabb legelöl)
+allHirek.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Cikkek és Hírek">
+  <h1>Hírek és Események</h1>
+  <p>Itt olvashatod az ABC Sportclub legfrissebb híreit és eredményeit.</p>
+  
+  <div class="hirek-grid">
+    {allHirek.map((hir) => (
+      <article class="hir-kartya">
+        <span class="kategoria">{hir.data.category}</span>
+        <h2><a href={`/hirek/${hir.slug}`}>{hir.data.title}</a></h2>
+        <p class="datum">{hir.data.date.toLocaleDateString('hu-HU')}</p>
+        <p>{hir.data.excerpt}</p>
+        <a href={`/hirek/${hir.slug}`} class="tovabb">Tovább olvasom &rarr;</a>
+      </article>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .hirek-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .hir-kartya {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .kategoria {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .hir-kartya h2 {
+    margin: 0.5rem 0;
+  }
+  .hir-kartya h2 a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  .hir-kartya h2 a:hover {
+    text-decoration: underline;
+  }
+  .datum {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .tovabb {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .tovabb:hover {
+    text-decoration: underline;
+  }
+</style>

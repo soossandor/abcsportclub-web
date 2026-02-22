@@ -1,0 +1,205 @@
+---
+const { title } = Astro.props;
+const siteName = "ABC Sportclub";
+---
+
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | {siteName}</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-IDE-JON-A-KODOD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-IDE-JON-A-KODOD');
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>{siteName}</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Kezdőlap</a></li>
+          
+          <li class="dropdown">
+            <a href="#">ABC Tenisz Iskola ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="/mit-kap-ebbol">Mit kap ebből a gyermek...</a></li>
+              <li><a href="/gyakori-kerdesek">Gyakori kérdések</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/hetvegi-sportiskola">Hétvégi Sportiskola</a></li>
+          
+          <li class="dropdown">
+            <a href="#">Pickleball Versenyeink ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="/versenynaptar">Versenynaptár</a></li>
+              <li><a href="/senior-tour">Senior Tour (60+,65+)</a></li>
+              <li><a href="/silver-open">Silver Open Hungary</a></li>
+              <li><a href="/golden-serve">Golden Serve Tour 70+</a></li>
+              <li><a href="/golden-open">Golden Open Hungary 70+</a></li>
+              <li><a href="/wilson-junior">Wilson Junior Tour U14/U16</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/coaching">Mind & Motion Coaching</a></li>
+          <li><a href="/jelentkezes">Jelentkezés</a></li>
+          
+          <li class="dropdown">
+            <a href="/rolunk">Rólunk ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="/rolunk">Bemutatkozás</a></li>
+              <li><a href="/pickleball-mini-tenisz">Pickleball és Mini Tenisz</a></li>
+              <li><a href="/galeria">Galéria</a></li>
+              <li><a href="/kapcsolat">Kapcsolat</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="/taborok">Táborok</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <slot /> 
+    </main>
+
+    <footer>
+      <p>&copy; 2026 {siteName}. Minden jog fenntartva.</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #1a365d;
+    --accent-color: #ecc94b;
+    --text-color: #333;
+    --bg-color: #f9f9f9;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Fejléc újraformázva, hogy a sok menüpont kiférjen */
+  .header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column; /* Egymás alá teszi a logót és a menüt */
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+  }
+ 
+  .main-nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Ha nem fér ki, új sorba tördeli a menüt */
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .main-nav > ul > li {
+    position: relative; /* Ez kell a lenyíló menü pozicionálásához */
+  }
+
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav a:hover {
+    color: var(--accent-color);
+  }
+
+  /* --- Lenyíló (Dropdown) menü stílusok --- */
+  .dropdown-menu {
+    display: none; /* Alapból el van rejtve */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Középre igazítja a gomb alatt */
+    background-color: #2d3748;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    flex-direction: column;
+    gap: 0 !important;
+    padding: 0.5rem 0 !important;
+    border-radius: 4px;
+  }
+
+  /* Ha az egeret a fő menüpont fölé viszed, megjelenik az almenü */
+  .main-nav li.dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+  .dropdown-menu li {
+    width: 100%;
+  }
+
+  .dropdown-menu a {
+    padding: 0.6rem 1.2rem;
+    font-weight: normal;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .dropdown-menu li:last-child a {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--accent-color);
+  }
+  /* --------------------------------------- */
+
+  .container {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2d3748;
+    color: #a0aec0;
+    margin-top: auto;
+  }
+</style>
