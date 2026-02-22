@@ -7,6 +7,9 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
+editor:
+  preview: false
+
 collections:
   - name: "hirek"
     label: "Hírek és Cikkek"
@@ -18,4 +21,5 @@ collections:
       - {label: "Kategória (Hova kerüljön?)", name: "category", widget: "select", options: ["Hírek", "ABC Tenisz Iskola", "Hétvégi Sportiskola", "Pickleball Versenyeink", "Coaching", "Táborok"] }
       - {label: "Dátum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "Rövid összefoglaló", name: "excerpt", widget: "text"}
+      - {label: "Borítókép", name: "thumbnail", widget: "image", required: false }
       - {label: "Cikk szövege", name: "body", widget: "markdown"}

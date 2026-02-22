@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     props: { post },
   }));
 }
-
+ 
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -21,7 +21,13 @@ const { Content } = await post.render();
 <BaseLayout title={post.data.title}>
   <article class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-6">{post.data.title}</h1>
+ 
+    {post.data.thumbnail && (
+      <img src={post.data.thumbnail} alt={post.data.title} class="w-full max-h-[400px] object-cover rounded-lg mb-8 shadow-md" />
+    )}
     
+    <div class="prose max-w-none">
+
     <div class="prose">
       <Content />
     </div>
