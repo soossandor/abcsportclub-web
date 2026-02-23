@@ -1,5 +1,5 @@
 ---
-title: Mit kap ebből a gyermek – és mit a szülő
+title: Mit kap ebből a gyermek – és mit a szülő?
 category: Mit kap ebből a gyermek
 date: 2026-02-23
 excerpt: |-
@@ -7,8 +7,6 @@ excerpt: |-
   hanem hogy biztonságos, fejlődést támogató környezetben erős alapokat kapjon – testben és lélekben is.
 thumbnail: ''
 ---
-
-# Mit kap ebből a gyermek – és mit a szülő?
 
 _Az&#160;**ABC Tenisz és Pickleball Iskolában**&#160;a cél nem csupán az, hogy a gyerek sportoljon,_
 _hanem hogy&#160;**biztonságos, fejlődést támogató környezetben**&#160;erős alapokat kapjon – testben és lélekben is._
