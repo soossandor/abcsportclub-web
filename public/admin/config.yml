@@ -7,14 +7,12 @@ backend:
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
-editor:
-  preview: false
-
 collections:
   - name: "hirek"
     label: "Hírek és Cikkek"
     folder: "src/content/hirek"
     create: true
+    summary: "{{title}} - [{{category}}]"
     slug: "{{slug}}"
     fields:
       - {label: "Cím", name: "title", widget: "string"}
