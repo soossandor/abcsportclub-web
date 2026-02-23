@@ -32,6 +32,41 @@ const { Content } = await post.render();
       <Content />
     </div>
     
+{post.data.form_url && (
+      <div style="margin-top: 50px; padding: 30px; background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <h2 style="color: #1a365d; margin-top: 0; margin-bottom: 20px;">Jelentkezés a programra</h2>
+        
+        <form action={post.data.form_url} method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+          
+          <input type="hidden" name="Melyik_programra_jelentkezett" value={post.data.title} />
+
+          <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a5568;">Jelentkező neve *</label>
+            <input type="text" name="Név" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a5568;">E-mail cím *</label>
+            <input type="email" name="Email" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a5568;">Telefonszám</label>
+            <input type="tel" name="Telefon" style="width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box;" />
+          </div>
+
+          <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #4a5568;">Kategória / Megjegyzés</label>
+            <textarea name="Megjegyzés" rows="4" style="width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; box-sizing: border-box; resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" style="background-color: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; transition: background-color 0.3s;">
+            Jelentkezés elküldése
+          </button>
+        </form>
+      </div>
+    )}
+
     <a href="javascript:history.back()" class="mt-8 inline-block text-blue-500 hover:underline">
       &larr; Vissza
     </a>

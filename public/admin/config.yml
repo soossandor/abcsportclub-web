@@ -20,4 +20,5 @@ collections:
       - {label: "Dátum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "Rövid összefoglaló", name: "excerpt", widget: "text"}
       - {label: "Borítókép", name: "thumbnail", widget: "image", required: false }
+      - {label: "Űrlap linkje (Formspree URL - csak ha űrlapot akarsz)", name: "form_url", widget: "string", required: false }
       - {label: "Cikk szövege", name: "body", widget: "markdown"}
