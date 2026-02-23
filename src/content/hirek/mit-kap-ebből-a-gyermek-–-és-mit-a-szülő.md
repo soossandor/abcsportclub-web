@@ -77,4 +77,5 @@ a gyermek olyan alapokat kap, amelyekre **biztonsággal lehet építeni**.
 ### Hogyan lehet jelentkezni?
 
 A jelentkezés egyszerű:
-[**Jelentkezés**](https://abcsportclub-web.vercel.app/jelentkezes)[ ](https://abcsportclub-web.vercel.app/jelentkezes)menüponton keresztül, az online űrlap kitöltésével.
+
+**A **[**Jelentkezés**](https://abcsportclub-web.vercel.app/jelentkezes)[ ](https://abcsportclub-web.vercel.app/jelentkezes)menüponton keresztül, az online űrlap kitöltésével.
