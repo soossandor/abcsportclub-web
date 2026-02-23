@@ -1,8 +1,8 @@
 ---
-title: "Sikeresen indult a szezon!"
+title: Sikeresen indult a szezon!
+category: Piszkozat
 date: 2026-02-22
-category: "Versenyek"
-excerpt: "Az ABC Sportclub csapata fantasztikus eredményekkel nyitotta meg az idei szezont a hétvégi bajnokságon."
+excerpt: Az ABC Sportclub csapata fantasztikus eredményekkel nyitotta meg az idei szezont a hétvégi bajnokságon.
 ---
 
 # Hatalmas siker a hétvégén!
@@ -17,4 +17,4 @@ Az **ABC Sportclub** versenyzői a vártnál is jobban teljesítettek az idei é
 
 Gratulálunk minden résztvevőnek! Készülünk a következő, márciusi fordulóra, ahol remélhetőleg hasonlóan szép eredményekkel büszkélkedhetünk majd.
 
-*Ez a szöveg már maga a cikk tartalma. Ahogy látod, itt nem kell HTML kódokat írni, elég csak csillagokat vagy kettős kereszteket használni a formázáshoz!*
+_Ez a szöveg már maga a cikk tartalma. Ahogy látod, itt nem kell HTML kódokat írni, elég csak csillagokat vagy kettős kereszteket használni a formázáshoz!_
