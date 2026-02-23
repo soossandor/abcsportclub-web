@@ -1,9 +1,10 @@
 ---
 title: Második tábori próbacikk
-category: Piszkozat
+category: Gyakori kérdések
 date: 2026-02-21
 excerpt: Ez a második cikkem
 thumbnail: /uploads/Boldog születésnapot.jpg
+form_url: ''
 ---
 
 Ebben a cikkben már kipróbálok néhány formázási lehetőséget
@@ -13,6 +14,10 @@ Ebben a cikkben már kipróbálok néhány formázási lehetőséget
 ## Ez egy H2 cím
 
 Itt lesz egy felsorolás a H3-as cím után
+
+dvdfdfdfd
+
+dfffdfdgdf
 
 ### Felsorolás
 
